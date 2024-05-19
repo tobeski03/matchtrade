@@ -78,17 +78,17 @@ var elem = document.createElement("div");
 	            // There was an error
 	            console.warn('Something went wrong.', err);
           }); */
-    } else if (parseInt(stoch.innerText.slice(3, 7)) <= 20 && parseInt(stoch.innerText.slice(15, 19)) <= 20 && parseInt(rsi.innerText.slice(5, 9))<=30) {
+    } else if (parseInt(stoch.innerText.slice(3, 7)) < 20 && parseInt(stoch.innerText.slice(14, 19)) < 20 && parseInt(rsi.innerText.slice(5, 9))<31) {
       let buy = document.getElementById("MarketWatch-QuickBuy");
         signal.innerText = "BUY NOW";
       buy.click();
-    } else if (parseInt(stoch.innerText.slice(3, 7)) >= 80 && parseInt(stoch.innerText.slice(15, 19)) >= 80 && parseInt(rsi.innerText.slice(5, 9))>=70) {
+    } else if (parseInt(stoch.innerText.slice(3, 7)) > 80 && parseInt(stoch.innerText.slice(14, 19)) > 80 && parseInt(rsi.innerText.slice(5, 9))>69) {
       let sell = document.getElementById("MarketWatch-QuickSell");
         signal.innerText = "SELL NOW";
       sell.click();
     }
     price = currency.innerText.slice(5);
-    console.log(`Bot Active \n pair: ${pair.innerText} \n profit/loss:${pl} \n stoch: ${parseInt(stoch.innerText.slice(3, 8))}\n avg: ${parseInt(stoch.innerText.slice(15, 19))}\n signal2: ${parseInt(rsi.innerText.slice(5, 9))}`);
+    console.log(`Bot Active \n pair: ${pair.innerText} \n profit/loss:${pl} \n stoch: ${parseInt(stoch.innerText.slice(3, 8))}\n avg: ${parseInt(stoch.innerText.slice(14, 19))}\n signal2: ${parseInt(rsi.innerText.slice(5, 9))}`);
   }
 
   function beep(freq) {
